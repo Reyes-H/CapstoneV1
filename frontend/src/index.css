@@ -1,0 +1,125 @@
+/* frontend/src/index.css */
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+  --ok: #10b981;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  background: #374151;
+}
+.status.ok { background: #064e3b; color: #a7f3d0; }
+.status.bad { background: #4b1d1d; color: #fecaca; }
+
+.card {
+  background: var(--card);
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.field { margin-bottom: 12px; }
+.field label { display: block; font-weight: 600; margin-bottom: 6px; }
+.field small { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  cursor: pointer;
+  user-select: none;
+}
+.chip.active {
+  background: #1f2937;
+  border-color: var(--accent);
+}
+.chip input { display: none; }
+
+.primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #fecaca;
+  background: #7f1d1d;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.meta { margin-bottom: 12px; color: var(--muted); }
+
+.list { padding-left: 20px; }
+.item { margin-bottom: 16px; }
+.subtle { color: var(--muted); font-size: 14px; }
+.stem { margin: 6px 0; font-weight: 600; }
+.choices { margin: 6px 0 0 0; }
+
+.details summary { cursor: pointer; }
+.solution { margin-top: 6px; }
+
+.footer { margin-top: 16px; color: var(--muted); }
