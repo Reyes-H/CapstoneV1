@@ -34,9 +34,9 @@ npm install
 npm run dev
 ```
 ### Testing:    
-Open http://localhost:5174/  
+Open http://localhost:5173/  
 ### Details:
-Runs a development server (Vite) at http://localhost:5174.  
+Runs a development server (Vite) at http://localhost:5173.  
 Renders the UI where you select topics, quiz type, number of questions, grade, and language.  
 On “Generate,” it sends a POST request to the backend API with those options.  
 Shows the returned questions, choices, and solutions.  
@@ -53,7 +53,7 @@ metadata: topics, quizType, numQuestions, gradeLevel, outputLanguage, seed, gene
 questions: array with id, topic, difficulty, stem, choices (if mcq), answer, workedSolution  
 
 ## CORS
-Browsers enforce the Same-Origin Policy: a page at http://localhost:5174 can’t make requests to http://127.0.0.1:8000 unless the server explicitly allows it. CORS (Cross-Origin Resource Sharing) is how the server signals permission. In FastAPI, you add CORSMiddleware with allow_origins set to your frontend’s origin(s), for example: ["http://localhost:5174", "http://127.0.0.1:5174"]. When the browser makes a cross-origin request, it may send a preflight OPTIONS request. If the server responds with the right CORS headers (e.g., Access-Control-Allow-Origin), the real request proceeds.
+Browsers enforce the Same-Origin Policy: a page at http://localhost:5173 can’t make requests to http://127.0.0.1:8000 unless the server explicitly allows it. CORS (Cross-Origin Resource Sharing) is how the server signals permission. In FastAPI, you add CORSMiddleware with allow_origins set to your frontend’s origin(s), for example: ["http://localhost:5173", "http://127.0.0.1:5173"]. When the browser makes a cross-origin request, it may send a preflight OPTIONS request. If the server responds with the right CORS headers (e.g., Access-Control-Allow-Origin), the real request proceeds.
 
 ## Structure
 ```
@@ -76,3 +76,9 @@ CapstoneV1/
    ├─ package.json           # frontend dependencies and scripts
    └─ vite.config.js         # optional dev proxy config (helps avoid CORS)
 ```
+
+
+
+## 08/13
+setx POE_API_KEY "YOUR_POE_API_KEY"
+# Close and reopen the terminal so the env var is available
